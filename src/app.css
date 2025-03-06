@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 /* Reset & Base Styles */
 html {
@@ -23,6 +23,7 @@ section, summary, time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    font-family: 'Open Sans', sans-serif !important;
 }
 
 article, aside, details, figcaption, figure,
@@ -30,25 +31,58 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+a, button, input, textarea, [onclick], [type="submit"], [type="button"] {
+    cursor: none !important;
+}
+
 body {
-	overflow-x: hidden;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
 	line-height: 1;
 	font-family: 'Open Sans', sans-serif;
 	color: #f4f4f4;
 	font-weight: 300;
 	font-size: 13pt;
 	line-height: 1.85em;
+	cursor: none;
 }
 
 body {
 	background-color: #0a0a0a;
 	background-image: url("images/bg.png");
 	padding-top: 3.5em;
+    font-family: 'Open Sans', sans-serif;
+	cursor: none;
 }
 
-body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-	animation: none !important;
-	transition: none !important;
+body::after {
+    content: '';
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+body::-webkit-scrollbar {
+    width: 0px; /* WebKit browsers */
+    background: transparent; /* Optional: make scrollbar background transparent */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: transparent; /* Hide scrollbar thumb */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari) */
+}
+
+html {
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 ol, ul {
@@ -140,7 +174,6 @@ p, ul, ol, dl, table {
 	padding-left: 25px;
 	padding-right: 25px;
 	box-sizing: border-box;
-	overflow: hidden;
   }
 
 .container.medium {
