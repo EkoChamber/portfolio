@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>Aneko Delfin</title>
+	<title>Aneko's Portfolio</title>
 	<meta name="description" content="Portfolio of Aneko Delfin | Developer and Designer" />
 </svelte:head>
 
