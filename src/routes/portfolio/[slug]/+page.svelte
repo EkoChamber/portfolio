@@ -1,10 +1,8 @@
 <script>
 	import { getProjectById } from '$lib/data/projects.js';
-	import Footer from '$lib/components/Footer.svelte';
 	import Nav from '$lib/components/Nav.svelte';
 	import { page } from '$app/stores';
 	
-	// Get the project slug from the URL
 	$: slug = $page.params.slug;
 	$: project = getProjectById(slug);
 </script>
@@ -49,9 +47,7 @@
 						<a href="/#portfolio" class="button">← Back to Portfolio</a>
 					</div>
 				</div>
-			</div>
-			
-			<Footer />
+			</div>	
 		</div>
 	</article>
 {:else}
@@ -65,8 +61,6 @@
 			<div class="project-nav">
 				<a href="/#portfolio" class="button">← Back to Portfolio</a>
 			</div>
-			
-			<Footer />
 		</div>
 	</article>
 {/if}

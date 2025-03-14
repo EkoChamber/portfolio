@@ -17,7 +17,7 @@
 					description="Data science project"
 					year="2024"
 					imageClass="gap-cover"
-					link="gap.html"
+					link="/portfolio/bridging-the-gap"
 				/>
 			</div>
 			<div class="col-6 col-6-medium col-12-small">
@@ -26,7 +26,7 @@
 					description=""
 					year="2024"
 					imageClass="assembler-cover"
-					link="#"
+					link="/portfolio/assembler"
 				/>
 			</div>
 		</div>
@@ -38,7 +38,7 @@
 					description="Mobile app for computer science learning"
 					year="2022"
 					imageClass="bitwise-cover"
-					link="#"
+					link="/portfolio/bitwise"
 				/>
 			</div>
 			<div class="col-6 col-6-medium col-12-small">
@@ -47,7 +47,7 @@
 					description="Productivity app"
 					year="2022"
 					imageClass="jot-cover"
-					link="#"
+					link="/portfolio/jot"
 				/>
 			</div>
 		</div>
@@ -59,7 +59,7 @@
 					description="Emergency app"
 					year="2021"
 					imageClass="handa-cover"
-					link="#"
+					link="/portfolio/laging-handa"
 				/>
 			</div>
 			<div class="col-6 col-6-medium col-12-small">
@@ -68,7 +68,7 @@
 					description="Travel app"
 					year="2021"
 					imageClass="butuwhere-cover"
-					link="#"
+					link="/portfolio/butuwhere"
 				/>
 			</div>
 		</div>
@@ -80,7 +80,7 @@
 					description="Educational game on Mendelian genetics"
 					year="2021"
 					imageClass="baby-cover"
-					link="#"
+					link="/portfolio/guess-that-baby"
 				/>
 			</div>
 		</div>

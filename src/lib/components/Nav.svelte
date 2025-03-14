@@ -55,7 +55,7 @@
         transition: background-color 0.3s ease;
         position: fixed;
         left: 0;
-        top: 20px; /* Added small margin on top */
+        top: 20px;
         width: 100%;
         z-index: 1000;
     }
@@ -81,7 +81,7 @@
     }
     
     a:hover, a:focus {
-        background: none; /* Remove hover background */
+        background: none;
     }
     
     a::after {

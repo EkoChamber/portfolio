@@ -1,5 +1,4 @@
 <script>
-	// Social media links
 	const socialLinks = [
 		{
 			name: 'LinkedIn',
@@ -39,15 +38,12 @@
 </article>
 
 <style>
-	/* Use a custom container class to avoid conflicts with global CSS */
 	:global(article#connect) {
 		background-image: url('/images/gradient.png');
 		background-size: cover;
 		background-position: center;
-		transform: rotate(180deg); /* Flip the background upside down */
+		transform: rotate(180deg);
 	}
-	
-	/* Rotate the content back to normal */
 	.connect-container {
 		transform: rotate(180deg);
 		margin: 0 auto;
@@ -66,7 +62,7 @@
 		display: flex;
 		justify-content: center;
 		gap: 2rem;
-		margin: 6rem auto; /* Added auto horizontal margins */
+		margin: 6rem auto;
 		width: 100%;
 	}
 	
@@ -97,9 +93,9 @@
 	}
 	
 	.social-icon {
-		width: 40px; /* Increased size since we removed the container */
+		width: 40px;
 		height: 40px;
-		filter: brightness(0) invert(1); /* Makes icons white */
+		filter: brightness(0) invert(1);
 		transition: opacity 0.3s ease;
 	}
 	

@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
-/* Reset & Base Styles */
 html {
 	scroll-behavior: smooth;
-	scroll-padding-top: 3.5em; /* Height of the fixed navigation */
+	scroll-padding-top: 3.5em;
 }
 
 html, body, div, span, applet, object,
@@ -36,9 +35,9 @@ a, button, input, textarea, [onclick], [type="submit"], [type="button"] {
 }
 
 body {
-    overflow-y: scroll; /* Enable vertical scrolling */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 	line-height: 1;
 	font-family: 'Open Sans', sans-serif;
 	color: #f4f4f4;
@@ -68,16 +67,16 @@ body::after {
 }
 
 body::-webkit-scrollbar {
-    width: 0px; /* WebKit browsers */
-    background: transparent; /* Optional: make scrollbar background transparent */
+    width: 0px;
+    background: transparent;
 }
 
 body::-webkit-scrollbar-thumb {
-    background: transparent; /* Hide scrollbar thumb */
+    background: transparent;
 }
 
 body::-webkit-scrollbar {
-    display: none; /* WebKit browsers (Chrome, Safari) */
+    display: none;
 }
 
 html {
@@ -393,62 +392,6 @@ nav a.active {
 
 .baby-cover {
     background-image: url('/images/baby-cover.png');
-}
-
-/* Form */
-form label {
-	color: #fff;
-	font-weight: 700;
-	display: block;
-	margin: 0 0 0.5em 0;
-}
-
-form input[type=text],
-form input[type=email],
-form textarea {
-	transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
-	appearance: none;
-	display: block;
-	border: 0;
-	padding: 0.75em;
-	font-size: 1em;
-	border-radius: 8px;
-	border: solid 1px #333;
-	background: #222;
-	color: #ccc;
-	box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
-	width: 100%;
-}
-
-form input[type=text]:focus,
-form input[type=email]:focus,
-form textarea:focus {
-	background: #252525;
-	box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px #43bff0;
-}
-
-form textarea {
-	height: 15em;
-}
-
-form .actions {
-	margin-bottom: 0;
-}
-
-form ::-webkit-input-placeholder {
-	color: #555 !important;
-}
-
-form :-moz-placeholder {
-	color: #555 !important;
-}
-
-form ::-moz-placeholder {
-	color: #555 !important;
-}
-
-form :-ms-input-placeholder {
-	color: #555 !important;
 }
 
 /* Button */

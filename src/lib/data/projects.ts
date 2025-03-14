@@ -86,6 +86,18 @@ export const projects = [
     }
 ];
 
-export function getProjectById(id) {
+type Project = {
+    id: string;
+    title: string;
+    description: string;
+    year: string;
+    imageClass: string;
+    fullDescription: string;
+    challenges: string;
+    solution: string;
+    technologies: string[];
+};
+
+export function getProjectById(id: string): Project | undefined {
     return projects.find(project => project.id === id);
 }

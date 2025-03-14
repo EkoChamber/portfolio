@@ -5,10 +5,8 @@
 	export let year = '';
 	export let link = '#';
 	
-	// Extract the base name from classes like 'gap-cover', 'assembler-cover', etc.
 	const baseName = imageClass.replace('-cover', '');
 	
-	// Define both image paths
 	const defaultImage = `/images/${baseName}-cover.png`;
 	const hoverImage = `/images/${baseName}.png`;
 </script>
@@ -67,10 +65,10 @@
 		width: 100%;
 		height: auto;
 		display: block;
-		border-radius: 12px; /* Same as parent to ensure perfect fit */
+		border-radius: 12px;
 		transition: opacity 0.3s ease;
 		position: relative;
-		z-index: 0; /* Ensure image is below the gradient overlay */
+		z-index: 0;
 	}
 	
 	.default-image {

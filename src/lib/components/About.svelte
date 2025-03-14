@@ -1,5 +1,5 @@
 <script>
-	// About section component
+
 </script>
 
 <article id="about" class="wrapper style2">
@@ -13,11 +13,13 @@
 		</div>
 
 		<div class="container text-content">
-			<p>I'm Aneko, a computer science student with a knack for creating intuitive and visually captivating digital experiences.
+			<p>
+				I'm Aneko, a computer science student with a knack for creating intuitive and visually captivating digital experiences.
 				<br><br>
 				Over the past 4 years, I've gained experience in various areas of digital design and technology, including web development, app development, and UI/UX. From innovative school projects to winning hackathon entries, I've demonstrated my ability to deliver high-quality, impactful solutions. 
 				<br><br>
-				Let's create something amazing together!</p>
+				Let's create something amazing together!
+			</p>
 		</div>
 	</div>
 </article>

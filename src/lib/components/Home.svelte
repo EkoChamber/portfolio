@@ -4,7 +4,6 @@
 	let showLogos = false;
 
 	onMount(() => {
-		// Trigger the animation shortly after the component mounts
 		setTimeout(() => {
 			showLogos = true;
 		}, 100);
@@ -88,23 +87,22 @@
     font-size: 24px;
     color: white;
     margin-top: 1rem;
-    text-align: left; /* Left-aligned by default */
+    text-align: left;
   }
-  
-  /* Media query for smaller screens */
+
   @media (max-width: 1000px) {
     .tagline {
-      text-align: center; /* Center-aligned on smaller screens */
+      text-align: center;
     }
     
     .row {
-      flex-direction: column; /* Stack images vertically */
-      align-items: center; /* Center the stacked images */
-      gap: 0.25rem; /* Reduced vertical space between images */
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
     }
     
     .boxstyle3 {
-      margin-bottom: -2.5em; /* Remove bottom margin */
+      margin-bottom: -2.5em;
     }
 
     .boxstyle4 {
