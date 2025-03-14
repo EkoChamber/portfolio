@@ -39,7 +39,7 @@
 
 <style>
 	:global(article#connect) {
-		background-image: url('/images/gradient.png');
+		background-image: url('/images/gradient2.png');
 		background-size: cover;
 		background-position: center;
 		transform: rotate(180deg);
