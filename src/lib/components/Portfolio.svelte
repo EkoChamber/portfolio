@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 	import ProjectCard from './ProjectCard.svelte';
+	import { projects } from '../data/projects';
 </script>
 
 <article id="portfolio" class="wrapper style2">
@@ -9,24 +10,26 @@
 				<img src="/images/portfolio.png" style="height: 75px; width: auto; margin-bottom: 5em;" alt="" />
 			</div>
 		</header>
-		
+
 		<div class="row">
 			<div class="col-6 col-6-medium col-12-small">
 				<ProjectCard 
-					title="Bridging The Gap"
-					description="Data science project"
-					year="2024"
-					imageClass="gap-cover"
-					link="/portfolio/bridging-the-gap"
+					title={projects[0].title}
+					description={projects[0].description}
+					skills={['Full-stack Development', 'UI/UX Design', 'Database Design']}
+					technologies={projects[0].technologies}
+					imageClass={projects[0].imageClass.replace('-banner', '-cover')}
+					link={`/portfolio/${projects[0].id}`}
 				/>
 			</div>
 			<div class="col-6 col-6-medium col-12-small">
 				<ProjectCard 
-					title="Assembler"
-					description=""
-					year="2024"
-					imageClass="assembler-cover"
-					link="/portfolio/assembler"
+					title={projects[1].title}
+					description={projects[1].description}
+					skills={['Data Visualization', 'UI/UX Design', 'Statistical Analysis']}
+					technologies={projects[1].technologies}
+					imageClass={projects[1].imageClass.replace('-banner', '-cover')}
+					link={`/portfolio/${projects[1].id}`}
 				/>
 			</div>
 		</div>
@@ -34,41 +37,22 @@
 		<div class="row">
 			<div class="col-6 col-6-medium col-12-small">
 				<ProjectCard 
-					title="BitWise"
-					description="Mobile app for computer science learning"
-					year="2022"
-					imageClass="bitwise-cover"
-					link="/portfolio/bitwise"
+					title={projects[2].title}
+					description={projects[2].description || "C Program"}
+					skills={['C Programming']}
+					technologies={projects[2].technologies}
+					imageClass={projects[2].imageClass.replace('-banner', '-cover')}
+					link={`/portfolio/${projects[2].id}`}
 				/>
 			</div>
 			<div class="col-6 col-6-medium col-12-small">
 				<ProjectCard 
-					title="JOT"
-					description="Productivity app"
-					year="2022"
-					imageClass="jot-cover"
-					link="/portfolio/jot"
-				/>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-6 col-6-medium col-12-small">
-				<ProjectCard 
-					title="Laging Handa"
-					description="Emergency app"
-					year="2021"
-					imageClass="handa-cover"
-					link="/portfolio/laging-handa"
-				/>
-			</div>
-			<div class="col-6 col-6-medium col-12-small">
-				<ProjectCard 
-					title="BuTuWhere"
-					description="Travel app"
-					year="2021"
-					imageClass="butuwhere-cover"
-					link="/portfolio/butuwhere"
+					title={projects[4].title}
+					description={projects[4].description || "Travel Mobile App"}
+					skills={['UI/UX Design', 'Prototyping & Pitching']}
+					technologies={projects[4].technologies}
+					imageClass={projects[4].imageClass.replace('-banner', '-cover')}
+					link={`/portfolio/${projects[4].id}`}
 				/>
 			</div>
 		</div>
@@ -76,11 +60,22 @@
 		<div class="row">
 			<div class="col-6 col-6-medium col-12-small">
 				<ProjectCard 
-					title="Guess That Baby!"
-					description="Educational game on Mendelian genetics"
-					year="2021"
-					imageClass="baby-cover"
-					link="/portfolio/guess-that-baby"
+					title={projects[3].title}
+					description={projects[3].description || "Disaster Preparedness Mobile App"}
+					skills={['UI/UX Design', 'Prototyping & Pitching']}
+					technologies={projects[3].technologies}
+					imageClass={projects[3].imageClass.replace('-banner', '-cover')}
+					link={`/portfolio/${projects[3].id}`}
+				/>
+			</div>
+			<div class="col-6 col-6-medium col-12-small">
+				<ProjectCard 
+					title={projects[5].title}
+					description={projects[5].description || "Educational Java Game"}
+					skills={['Front-end Development', 'UI/UX Design', 'Game Design']}
+					technologies={projects[5].technologies}
+					imageClass={projects[5].imageClass.replace('-banner', '-cover')}
+					link={`/portfolio/${projects[5].id}`}
 				/>
 			</div>
 		</div>

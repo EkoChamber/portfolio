@@ -1,8 +1,9 @@
-<script>
+<script lang='ts'>
 	export let title = '';
 	export let description = '';
 	export let imageClass = '';
-	export let year = '';
+	export let skills: string[] = [];
+	export const technologies: string[] = [];
 	export let link = '#';
 	
 	const baseName = imageClass.replace('-cover', '');
@@ -19,7 +20,15 @@
 		</div>
 	</a>
 	<h3><a href={link}>{title}</a></h3>
-	<p style="font-weight: lighter;">{description}{description ? ' | ' : ''}{year}</p>
+	<p class="description">{description}</p>
+	
+	{#if skills && skills.length > 0}
+		<div class="skills-container">
+			{#each skills as skill}
+				<span class="skill-pill">{skill}</span>
+			{/each}
+		</div>
+	{/if}
 </article>
 
 <style>
@@ -102,12 +111,35 @@
 		text-decoration: none;
 	}
 	
-	p {
+	.description {
 		font-weight: lighter;
 		font-size: 0.9em;
 		color: rgba(255, 255, 255, 0.8);
-		margin-bottom: 0;
+		margin-bottom: 0.5em;
 		text-align: left;
 		line-height: 1.2;
+	}
+	
+	.skills-container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em;
+		margin-top: 0.5em;
+		text-align: left;
+	}
+	
+	.skill-pill {
+		display: inline-block;
+		padding: 0.2em 0.8em;
+		background-color: rgba(255, 255, 255, 0.1);
+		border-radius: 20px;
+		font-size: 0.75em;
+		color: rgba(255, 255, 255, 0.9);
+		font-weight: 300;
+		transition: background-color 0.2s ease;
+	}
+	
+	.skill-pill:hover {
+		background-color: rgba(255, 255, 255, 0.2);
 	}
 </style>

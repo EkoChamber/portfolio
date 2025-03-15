@@ -1,88 +1,75 @@
 export const projects = [
     {
+        id: 'iskedyul',
+        title: 'Iskedyul',
+        description: 'Automated Scheduling Web App',
+        year: '2025',
+        imageClass: 'iskedyul-banner',
+        fullDescription: `My team and I are developing Iskedyul, a web application designed to streamline the class scheduling process for our university's Department of Computer Science. 
+                        The platform allows administrators to create or upload schedules, analyze student demand through CSV uploads, and automatically detect conflicts such as overlapping class times, faculty assignments, or venue usage. 
+                        Additionally, the system provides recommendations on opening or dissolving course sections based on demand and generates optimized class combinations for different year levels according to the prescribed curriculum.`,
+        technologies: ['CSS', 'HTML', 'Javascript', 'Postgresql', 'Svelte', 'Typescript']
+    },
+    {
         id: 'bridging-the-gap',
         title: 'Bridging The Gap',
-        description: 'Data science project',
+        description: 'Exploratory Data Analysis',
         year: '2024',
         imageClass: 'gap-banner',
-        fullDescription: `"Bridging The Gap" is a data visualization project that examines socioeconomic disparities across different communities. 
-        Using public datasets, this project presents compelling visual narratives about income inequality, educational access,
-        and opportunities for economic mobility.`,
-        challenges: `Working with large, messy public datasets was the primary challenge. The data required extensive cleaning 
-        and normalization. Additionally, finding meaningful ways to visualize complex socioeconomic relationships 
-        demanded creative approaches to data storytelling.`,
-        solution: `I created an interactive dashboard that allows users to explore different facets of inequality:
-        - Income distribution across neighborhoods
-        - Educational resource allocation
-        - Access to essential services
-        - Economic mobility indicators`,
-        technologies: ['Python', 'Pandas', 'D3.js', 'React', 'Data Visualization']
+        fullDescription: `My team and I conducted an exploratory data analysis (EDA) on the income disparity between urban and rural areas in the Philippines, utilizing datasets from the CEIC Data Global Database and the Philippine Statistics Authority (PSA) Family Income and Expenditure Survey (FIES). 
+                        Our findings revealed a significant and growing economic divide, with urban regions—especially Metro Manila (NCR)—consistently reporting higher income levels due to the centralization of economic opportunities and resources.
+                        \n\nTo make our insights more accessible, we developed a website that presents key visualizations and statistical analyses. 
+                        We also provided data-driven recommendations that highlight the potential impact of policies creating more rural opportunities, investing in rural development, and enhancing rural education systems to promote inclusive economic growth and reduce income disparity.`,
+        technologies: ['CSS', 'HTML', 'Javascript', 'Jupyter', 'Matplotlib', 'Numpy', 'Pandas', 'Seaborn']
     },
     {
         id: 'assembler',
         title: 'Assembler',
-        description: '',
+        description: 'C Program',
         year: '2024',
         imageClass: 'assembler-banner',
-        fullDescription: 'A low-level programming project focusing on assembly language and computer architecture.',
-        challenges: 'Understanding the intricacies of machine code and creating an intuitive interface for learning assembly.',
-        solution: 'Developed an interactive tool that visualizes how assembly code executes at the processor level.',
-        technologies: ['Assembly', 'C++', 'JavaScript', 'WebAssembly']
-    },
-    {
-        id: 'bitwise',
-        title: 'BitWise',
-        description: 'Mobile app for computer science learning',
-        year: '2022',
-        imageClass: 'bitwise-banner',
-        fullDescription: 'An educational mobile application designed to teach computer science concepts through interactive lessons and challenges.',
-        challenges: 'Making complex CS concepts accessible and engaging for beginners while keeping the app lightweight.',
-        solution: 'Created bite-sized lessons with interactive visualizations and gamified learning experiences.',
-        technologies: ['React Native', 'JavaScript', 'Firebase', 'UI/UX Design']
-    },
-    {
-        id: 'jot',
-        title: 'JOT',
-        description: 'Productivity app',
-        year: '2022',
-        imageClass: 'jot-banner',
-        fullDescription: 'A productivity application focused on streamlining note-taking and task management.',
-        challenges: 'Building an intuitive interface that supports both quick notes and complex organizational systems.',
-        solution: 'Implemented a flexible note system with tagging, linking, and smart reminders.',
-        technologies: ['React', 'TypeScript', 'Electron', 'IndexedDB']
+        fullDescription: `We developed a C-based assembler that translates MIPS assembly code into machine code (binary), simulating the execution of MIPS instructions. 
+                        I was primarily responsible for instruction parsing, conversion to binary, implementation of assembly instruction handling, and testing.`,
+        technologies: ['C']
     },
     {
         id: 'laging-handa',
         title: 'Laging Handa',
-        description: 'Emergency app',
+        description: 'Disaster Preparedness Mobile App',
         year: '2021',
         imageClass: 'handa-banner',
-        fullDescription: 'An emergency preparedness application designed to help users during natural disasters and emergencies.',
-        challenges: 'Ensuring the app works reliably even with limited connectivity and provides accurate, life-saving information.',
-        solution: 'Created offline-first functionality with local caching and minimal battery usage during emergencies.',
-        technologies: ['Flutter', 'Dart', 'Google Maps API', 'Firebase']
+        fullDescription: `Laging Handa is an emergency app designed to guide users on what to do in the event of a natural disaster. 
+                        By integrating government-sourced datasets, the app provides real-time evacuation planning, survival guides, and emergency alerts to help residents of Butuan City stay safe. 
+                        Its key features include disaster-specific survival guides, real-time evacuation routing, disaster alerts via SMS, first aid tutorials, and emergency hotlines.
+                        \n\nWe pitched the app to Butuan City LGU officials and industry professionals at the SPARTA Hackathon and Open Data Challenge, an event organized by the Development Academy of the Philippines (DAP), Department of Science and Technology (DOST), and Butuan City LGU. 
+                        The competition aimed to leverage data and technology to solve Butuan's pressing challenges, with potential for project incubation.
+`,
+        technologies: ['Figma']
     },
     {
         id: 'butuwhere',
         title: 'BuTuWhere',
-        description: 'Travel app',
+        description: 'Travel Mobile App',
         year: '2021',
         imageClass: 'butuwhere-banner',
-        fullDescription: 'A travel companion app that helps users discover local attractions and hidden gems.',
-        challenges: 'Curating quality content for diverse locations and making recommendations that feel personal.',
-        solution: 'Implemented a community-driven content system with AI-enhanced recommendations based on user preferences.',
-        technologies: ['React Native', 'Node.js', 'MongoDB', 'Google Places API']
+        fullDescription: `BuTuWhere is a preference-based travel application designed to make trip planning for Butuan City seamless and personalized. 
+                        The app optimizes travel itineraries based on user preferences, such as duration of stay, budget, and activity interests, using data-driven algorithms based on key datasets, including Butuan's Tourism Master Plan. 
+                        The goal was to expand Butuan's tourism industry while giving visibility to smaller, lesser-known businesses.
+                        \n\nWe pitched the app to Butuan City LGU officials and industry professionals at the SPARTA Hackathon and Open Data Challenge, an event organized by the Development Academy of the Philippines (DAP), Department of Science and Technology (DOST), and Butuan City LGU. 
+                        The competition aimed to leverage data and technology to solve Butuan's pressing challenges, with potential for project incubation.`,
+        technologies: ['Figma']
     },
     {
         id: 'guess-that-baby',
         title: 'Guess That Baby!',
-        description: 'Educational game on Mendelian genetics',
+        description: 'Educational Java Game',
         year: '2021',
         imageClass: 'baby-banner',
-        fullDescription: 'An educational game that teaches Mendelian genetics through an engaging interface where players predict baby traits.',
-        challenges: 'Making complex genetic concepts fun and interactive while maintaining scientific accuracy.',
-        solution: 'Designed a playful interface with accurate genetic models behind the scenes.',
-        technologies: ['JavaScript', 'HTML5 Canvas', 'CSS3', 'Web Animation API']
+        fullDescription: `"Guess That Baby!" is an educational game designed to help students learn about Mendelian inheritance through interactive gameplay. 
+                        The game provides a crash course on genetics before challenging players to predict the physical traits of an offspring based on two parents with randomly-generated traits. 
+                        Players select traits they believe the offspring will inherit, which are then visually reflected in the game.
+                        \n\nWe developed the game using Java and JavaFX, leveraging FXML for UI layout and Java controllers to handle game logic and interactions. The game features over 150 custom icons and illustrations to represent different traits, as well as 900,000+ possible parent combinations.`,
+        technologies: ['Java', 'FXML', 'CSS']
     }
 ];
 
@@ -93,8 +80,6 @@ type Project = {
     year: string;
     imageClass: string;
     fullDescription: string;
-    challenges: string;
-    solution: string;
     technologies: string[];
 };
 

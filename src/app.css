@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
+:root {
+    font-family: 'Open Sans', sans-serif;
+}
+
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: 3.5em;
@@ -16,13 +20,12 @@ tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-    font-family: 'Open Sans', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 article, aside, details, figcaption, figure,
@@ -105,7 +108,7 @@ table {
 /* Typography */
 a {
 	transition: color .2s ease-in-out;
-	color: #43B3E0;
+	color: #7842C8;
 	text-decoration: underline;
 }
 
@@ -414,7 +417,7 @@ button,
 	text-shadow: -1px -1px 0.5px rgba(0, 0, 0, 0.5);
 	overflow: hidden;
 	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.2);
-	background-color: #43B3E0;
+	background-color: #7842C8;
 	padding: 1em 2.35em;
 	font-size: 1.1em;
 	max-width: 24em;

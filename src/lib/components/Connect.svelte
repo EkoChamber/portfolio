@@ -6,6 +6,11 @@
 			icon: '/images/linkedin.png',
 		},
 		{
+			name: 'GitHub',
+			url: 'https://github.com/EkoChamber',
+			icon: '/images/github.png',
+		},
+		{
 			name: 'Behance',
 			url: 'https://www.behance.net/anekodelfin',
 			icon: '/images/behance.png',
