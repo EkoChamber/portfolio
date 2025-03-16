@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getProjectById } from '$lib/data/projects.js';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 	
 	$: slug = $page.params.slug;
 	$: project = getProjectById(slug);
@@ -21,6 +22,39 @@
 		'laging-handa': {text: 'View our project demo', url: 'https://www.youtube.com/watch?v=oIuXyjI3-T4'},
 		'butuwhere': {text: 'View our project demo', url: 'https://www.youtube.com/watch?v=6x2FCyhK03E&t=346s'},
 		'guess-that-baby': {text: 'View our project demo', url: 'https://www.youtube.com/watch?v=MGgvqTI43XQ&t=141s'}
+	};
+
+	// Project carousel images
+	const projectCarouselImages: Record<string, string[]> = {
+		'iskedyul': [
+			'/images/projects/iskedyul/carousel-1.png',
+			'/images/projects/iskedyul/carousel-2.png',
+			'/images/projects/iskedyul/carousel-3.png'
+		],
+		'bridging-the-gap': [
+			'/images/projects/gap/carousel-1.png',
+			'/images/projects/gap/carousel-2.png',
+			'/images/projects/gap/carousel-3.png'
+		],
+		'assembler': [
+			'/images/projects/assembler/carousel-1.png',
+			'/images/projects/assembler/carousel-2.png'
+		],
+		'laging-handa': [
+			'/images/projects/handa/carousel-1.png',
+			'/images/projects/handa/carousel-2.png'
+		],
+		'butuwhere': [
+			'/images/projects/butuwhere/carousel-1.png',
+			'/images/projects/butuwhere/carousel-2.png',
+			'/images/projects/butuwhere/carousel-3.png'
+		],
+		'guess-that-baby': [
+			'/images/projects/baby/carousel-2.png',
+			'/images/projects/baby/carousel-3.png',
+			'/images/projects/baby/carousel-4.png',
+			'/images/projects/baby/carousel-5.png'
+		]
 	};
 
 	const techIcons: Record<string, string> = {
@@ -52,6 +86,62 @@
 	function getActionForProject(projectId: string): {text: string, url: string} | null {
 		return projectActions[projectId] || null;
 	}
+	
+	function getCarouselImagesForProject(projectId: string): string[] {
+		return projectCarouselImages[projectId] || [];
+	}
+	
+	// Carousel animation
+	let carouselContainer: HTMLElement;
+	let animationFrame: number;
+	let scrollPosition = 0;
+	const scrollSpeed = 0.2;
+	
+	onMount(() => {
+		if (project && carouselContainer) {
+			setTimeout(() => {
+				startCarouselAnimation();
+			}, 300);
+			
+			carouselContainer.addEventListener('mouseenter', () => {
+				if (animationFrame) {
+					cancelAnimationFrame(animationFrame);
+				}
+			});
+			
+			carouselContainer.addEventListener('mouseleave', () => {
+				startCarouselAnimation();
+			});
+		}
+		
+		return () => {
+			if (animationFrame) {
+				cancelAnimationFrame(animationFrame);
+			}
+		};
+	});
+	
+	function startCarouselAnimation() {
+		const animate = () => {
+			if (!carouselContainer) return;
+			
+			const maxScroll = carouselContainer.scrollWidth - carouselContainer.clientWidth;
+			if (maxScroll <= 0) return;
+			
+			scrollPosition += scrollSpeed;
+			
+			if (scrollPosition >= maxScroll) {
+				scrollPosition = 0;
+				carouselContainer.scrollTo({ left: 0, behavior: 'auto' });
+			} else {
+				carouselContainer.scrollLeft = scrollPosition;
+			}
+			
+			animationFrame = requestAnimationFrame(animate);
+		};
+		
+		animationFrame = requestAnimationFrame(animate);
+	}
 </script>
 
 <svelte:head>
@@ -68,7 +158,25 @@
 				</header>
 				
 				<div class="project-image">
-					<div class="image-container {project.imageClass}"></div>
+					{#if getCarouselImagesForProject(project.id).length > 0}
+						<!-- Carousel -->
+						<div class="carousel-container" bind:this={carouselContainer}>
+							<div class="carousel-track">
+								{#each getCarouselImagesForProject(project.id) as image, i}
+									<div class="carousel-item">
+										<img src={image} alt="{project.title} screenshot {i+1}" loading="lazy" />
+									</div>
+								{/each}
+								{#each getCarouselImagesForProject(project.id).slice(0, 2) as image, i}
+									<div class="carousel-item">
+										<img src={image} alt="{project.title} screenshot {i+1} (duplicate)" loading="lazy" />
+									</div>
+								{/each}
+							</div>
+						</div>
+					{:else}
+						<div class="image-container {project.imageClass}"></div>
+					{/if}
 				</div>
 				
 				<div class="project-description">
@@ -179,6 +287,43 @@
 		margin-bottom: 2rem;
 	}
 	
+	/* Carousel Styles */
+	.carousel-container {
+		width: 100%;
+		min-height: 200px;
+		max-height: 500px;
+		overflow-x: hidden;
+		position: relative;
+		border-radius: 4px;
+	}
+	
+	.carousel-track {
+		display: flex;
+		align-items: center;
+	}
+	
+	.carousel-item {
+		flex: 0 0 auto;
+		margin-right: 16px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.carousel-item:last-child {
+		margin-right: 0;
+	}
+	
+	.carousel-item img {
+		max-height: 450px;
+		max-width: 500px;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+		border-radius: 4px;
+	}
+	
+	/* Original styles */
 	.image-container {
 		width: 100%;
 		height: 350px;
@@ -190,6 +335,9 @@
 	.project-description {
 		line-height: 1.6;
 		margin-bottom: 2rem;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		max-width: 100%;
 	}
 	
 	.project-description p {
@@ -258,7 +406,7 @@
 		background-color: rgba(255, 255, 255, 0.2);
 	}
 	
-	/* Button styles */
+	/* Buttons */
 	.buttons {
 		display: flex;
 		flex-direction: column;
@@ -314,6 +462,8 @@
 		.main-content {
 			flex: 2;
 			margin-right: 3rem;
+			max-width: calc(100% - 350px);
+			overflow: hidden;
 		}
 		
 		.sidebar {
@@ -321,6 +471,16 @@
 			position: sticky;
 			top: 2rem;
 			align-self: flex-start;
+			min-width: 250px;
+			max-width: 300px;
+		}
+
+		.carousel-container {
+			max-height: 450px;
+		}
+		
+		.carousel-item img {
+			max-width: 500px;
 		}
 	}
 </style>
