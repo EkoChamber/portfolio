@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+	import { base } from '$app/paths';
+
 	const socialLinks = [
 		{
 			name: 'LinkedIn',
@@ -26,6 +28,13 @@
 			icon: '/images/youtube.png',
 		}
 	];
+
+	function getIconPath(iconPath: string): string {
+		if (iconPath.startsWith('http://') || iconPath.startsWith('https://') || iconPath.startsWith('//')) {
+		return iconPath;
+		}
+    return `${base}${iconPath}`;
+  }
 </script>
 
 <article id="connect" class="wrapper style2">
@@ -34,7 +43,7 @@
 			{#each socialLinks as link}
 				<a href={link.url} target="_blank" rel="noopener noreferrer" class="social-link" aria-label={link.name}>
 					<div class="social-icon-container">
-						<img src={link.icon} alt={link.name} class="social-icon" />
+						<img src={getIconPath(link.icon)} alt={link.name} class="social-icon" />
 					</div>
 				</a>
 			{/each}

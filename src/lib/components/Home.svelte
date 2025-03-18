@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+  import { base } from '$app/paths';
 
 	let showLogos = false;
 
@@ -15,10 +16,10 @@
     <div class="content-wrapper">
       <div class="row">
         <div class="boxstyle3 logo" class:show={showLogos}>
-          <img src="/images/aneko.png" alt="Aneko" draggable="false" />
+          <img src="{base}/images/aneko.png" alt="Aneko" draggable="false" />
         </div>
         <div class="boxstyle4 logo" class:show={showLogos}>
-          <img src="/images/delfin.png" alt="Delfin" draggable="false" />
+          <img src="{base}/images/delfin.png" alt="Delfin" draggable="false" />
         </div>
       </div>
       <p class="tagline">Developer, designer, and everything in between.</p>

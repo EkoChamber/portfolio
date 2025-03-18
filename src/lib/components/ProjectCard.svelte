@@ -1,4 +1,6 @@
 <script lang='ts'>
+	import { base } from '$app/paths';
+
 	export let title = '';
 	export let description = '';
 	export let imageClass = '';
@@ -8,8 +10,10 @@
 	
 	const baseName = imageClass.replace('-cover', '');
 	
-	const defaultImage = `/images/${baseName}-cover.png`;
-	const hoverImage = `/images/${baseName}.png`;
+	const defaultImage = `${base}/images/${baseName}-cover.png`;
+	const hoverImage = `${base}/images/${baseName}.png`;
+
+	const fullLink = link.startsWith('http') ? link : `${base}${link}`;
 </script>
 
 <article class="style2">

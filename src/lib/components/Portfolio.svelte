@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import ProjectCard from './ProjectCard.svelte';
 	import { projects } from '../data/projects';
 </script>
@@ -7,7 +8,7 @@
 	<div class="containerrow">
 		<header>
 			<div class="boxstyle3">
-				<img src="/images/portfolio.png" style="height: 75px; width: auto; margin-bottom: 5em;" alt="" />
+				<img src="{base}/images/portfolio.png" style="height: 75px; width: auto; margin-bottom: 5em;" alt="" />
 			</div>
 		</header>
 

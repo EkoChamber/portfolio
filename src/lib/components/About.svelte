@@ -1,5 +1,5 @@
 <script>
-
+	import { base } from '$app/paths';
 </script>
   
   <article id="about" class="wrapper style2">
@@ -8,7 +8,7 @@
 		  <div class="container">
 			  <header>
 				  <div class="boxstyle3">
-					  <img src="/images/hello.png" style="height: 75px; width: auto;" alt="Hello" />
+					  <img src="{base}/images/hello.png" style="height: 75px; width: auto;" alt="Hello" />
 				  </div>
 			  </header>
 		  </div>
