@@ -7,6 +7,9 @@
 	export let skills: string[] = [];
 	export const technologies: string[] = [];
 	export let link = '#';
+
+	const isExternalLink = link.startsWith('http');
+    const formattedLink = isExternalLink ? link : (link.startsWith(base) ? link : `${base}${link.startsWith('/') ? link : '/' + link}`);
 	
 	const baseName = imageClass.replace('-cover', '');
 	

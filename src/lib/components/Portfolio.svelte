@@ -20,7 +20,7 @@
 					skills={['Full-stack Development', 'UI/UX Design', 'Database Design']}
 					technologies={projects[0].technologies}
 					imageClass={projects[0].imageClass.replace('-banner', '-cover')}
-					link={`/portfolio/${projects[0].id}`}
+					link={`${base}/portfolio/${projects[0].id}`}
 				/>
 			</div>
 			<div class="col-6 col-6-medium col-12-small">
@@ -30,7 +30,7 @@
 					skills={['Data Visualization', 'UI/UX Design', 'Statistical Analysis']}
 					technologies={projects[1].technologies}
 					imageClass={projects[1].imageClass.replace('-banner', '-cover')}
-					link={`/portfolio/${projects[1].id}`}
+					link={`${base}/portfolio/${projects[1].id}`}
 				/>
 			</div>
 		</div>
@@ -43,7 +43,7 @@
 					skills={['C Programming']}
 					technologies={projects[2].technologies}
 					imageClass={projects[2].imageClass.replace('-banner', '-cover')}
-					link={`/portfolio/${projects[2].id}`}
+					link={`${base}/portfolio/${projects[2].id}`}
 				/>
 			</div>
 			<div class="col-6 col-6-medium col-12-small">
@@ -53,7 +53,7 @@
 					skills={['UI/UX Design', 'Prototyping & Pitching']}
 					technologies={projects[4].technologies}
 					imageClass={projects[4].imageClass.replace('-banner', '-cover')}
-					link={`/portfolio/${projects[4].id}`}
+					link={`${base}/portfolio/${projects[4].id}`}
 				/>
 			</div>
 		</div>
@@ -66,7 +66,7 @@
 					skills={['UI/UX Design', 'Prototyping & Pitching']}
 					technologies={projects[3].technologies}
 					imageClass={projects[3].imageClass.replace('-banner', '-cover')}
-					link={`/portfolio/${projects[3].id}`}
+					link={`${base}/portfolio/${projects[3].id}`}
 				/>
 			</div>
 			<div class="col-6 col-6-medium col-12-small">
@@ -76,7 +76,7 @@
 					skills={['Front-end Development', 'UI/UX Design', 'Game Design']}
 					technologies={projects[5].technologies}
 					imageClass={projects[5].imageClass.replace('-banner', '-cover')}
-					link={`/portfolio/${projects[5].id}`}
+					link={`${base}/portfolio/${projects[5].id}`}
 				/>
 			</div>
 		</div>
