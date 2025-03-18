@@ -13,8 +13,7 @@ const config = {
     }),
     paths: {
       base: dev ? '' : '/portfolio'
-    },
-    trailingSlash: 'always'
+    }
   }
 };
 
