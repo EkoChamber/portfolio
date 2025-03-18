@@ -367,11 +367,6 @@
 										<img src={image} alt="{project.title} screenshot {i+1}" loading="lazy" />
 									</div>
 								{/each}
-								{#each getCarouselImagesForProject(project.id).slice(0, 2) as image, i}
-									<div class="carousel-item">
-										<img src={image} alt="{project.title} screenshot {i+1} (duplicate)" loading="lazy" />
-									</div>
-								{/each}
 							</div>
 						</div>
 					{:else}
