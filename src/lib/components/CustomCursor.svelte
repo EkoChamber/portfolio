@@ -1,20 +1,27 @@
 <script lang='ts'>
     import { onMount, onDestroy } from 'svelte';
+    import { browser } from '$app/environment';
 
     let x = 0;
     let y = 0;
     let isHovering = false;
     let isMobile = false;
     let cursorVisible = true;
+    let cursorSize = 10;
 
-    function checkMobile(): boolean {
+    function detectMobile() {
+        if (!browser) return false;
+        
         return (
             /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
-            (window.matchMedia("(max-width: 768px)").matches)
+            window.matchMedia("(max-width: 768px)").matches ||
+            'ontouchstart' in window
         );
     }
 
     function handleMouseMove(e: MouseEvent): void {
+        if (isMobile) return;
+        
         x = e.clientX;
         y = e.clientY;
         cursorVisible = true;
@@ -33,12 +40,12 @@
             x = e.touches[0].clientX;
             y = e.touches[0].clientY;
             cursorVisible = true;
-        }
-    }
-
-    function handleTouchEnd(): void {
-        if (isMobile) {
-            cursorVisible = false;
+            
+            if (isMobile) {
+                setTimeout(() => {
+                    cursorVisible = false;
+                }, 500);
+            }
         }
     }
 
@@ -47,29 +54,35 @@
             isHovering = 
                 e.target.tagName === 'A' || 
                 !!e.target.closest('button') || 
-                e.target.hasAttribute('onclick');
+                e.target.hasAttribute('onclick') ||
+                e.target.classList.contains('project-card');
+                
+            cursorSize = isHovering ? 15 : 10;
         } else {
             isHovering = false;
+            cursorSize = 10;
         }
     }
 
     function handleMouseOut(): void {
         isHovering = false;
+        cursorSize = 10;
     }
 
     onMount(() => {
-        isMobile = checkMobile();
-
+        isMobile = detectMobile();
+        
+        document.body.classList.add('custom-cursor-active');
+        
         if (!isMobile) {
             window.addEventListener('mousemove', handleMouseMove);
             window.addEventListener('mouseover', handleMouseOver);
             window.addEventListener('mouseout', handleMouseOut);
         } else {
+            cursorVisible = false;
+            
             window.addEventListener('touchmove', handleTouchMove);
             window.addEventListener('touchstart', handleTouchStart);
-            window.addEventListener('touchend', handleTouchEnd);
-            
-            cursorVisible = false;
         }
 
         return () => {
@@ -78,35 +91,39 @@
             window.removeEventListener('mouseout', handleMouseOut);
             window.removeEventListener('touchmove', handleTouchMove);
             window.removeEventListener('touchstart', handleTouchStart);
-            window.removeEventListener('touchend', handleTouchEnd);
+            
+            document.body.classList.remove('custom-cursor-active');
         };
     });
 </script>
-  
+
 {#if cursorVisible}
 <div 
-    class="cursor"
+    class="custom-cursor"
     class:hovering={isHovering}
     style="
         left: {x}px;
         top: {y}px;
+        width: {cursorSize}px;
+        height: {cursorSize}px;"
+></div>
+{/if}
+
+<style>
+    .custom-cursor {
+        position: fixed;
         width: 10px;
         height: 10px;
         background-color: white;
+        border-radius: 50%;
         pointer-events: none;
         z-index: 9999;
-        transform: translate(-50%, -50%);"
-></div>
-{/if}
-  
-<style>
-    .cursor {
-        position: fixed;
-        pointer-events: none;
-        transition: transform 0.1s ease;
+        transform: translate(-50%, -50%);
+        transition: width 0.2s ease, height 0.2s ease, transform 0.1s ease;
     }
     
     .hovering {
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.2);
+        mix-blend-mode: difference;
     }
 </style>

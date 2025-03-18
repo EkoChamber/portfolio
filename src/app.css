@@ -81,6 +81,15 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+body.custom-cursor-active::after {
+    display: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 html {
     overflow-y: scroll;
     scrollbar-width: none;
@@ -170,12 +179,12 @@ p, ul, ol, dl, table {
 }
 
 .container {
-	width: 100%;
-	max-width: 100%;
-	padding-left: 25px;
-	padding-right: 25px;
-	box-sizing: border-box;
-  }
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
 
 .container.medium {
 	width: 900px;
@@ -235,6 +244,13 @@ p, ul, ol, dl, table {
 	text-align: center;
 	padding: 2em;
 	border-radius: 8px;
+}
+
+.boxstyle3 img, 
+header img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* Wrappers */
@@ -516,6 +532,19 @@ ul.social li a:hover {
 	}
 }
 
+@media screen and (max-width: 768px) {
+    img {
+        max-width: 100%;
+        height: auto !important;
+    }
+    
+    .boxstyle3 img {
+        height: auto !important;
+        max-height: 60px;
+        width: auto;
+    }
+}
+
 @media screen and (max-width: 736px) {
 	body {
 		padding-top: 44px;
@@ -542,4 +571,40 @@ ul.social li a:hover {
 		line-height: inherit;
 		border-radius: 0;
 	}
+
+@media (hover: hover) and (pointer: fine) {
+	body, 
+	a, 
+	button, 
+	input, 
+	textarea, 
+	[onclick], 
+	[type="submit"], 
+	[type="button"] {
+		cursor: none !important;
+	}
+}
+
+@media (hover: none) or (pointer: coarse) {
+    body, 
+    a, 
+    button, 
+    input, 
+    textarea, 
+    [onclick], 
+    [type="submit"], 
+    [type="button"] {
+        cursor: auto !important;
+    }
+    
+    .custom-cursor {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .custom-cursor.visible {
+        opacity: 1;
+    }
+}
+
 }
