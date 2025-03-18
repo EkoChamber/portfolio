@@ -1,16 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
-    onMount(() => {
-        console.log('Navbar component is mounted and running');
-    });
 	
 	let activeSection = 'home';
 	
 	function scrollToSection(sectionId: string, event: MouseEvent) {
-
-        console.log('Attempting to scroll to section:', sectionId);
-
 		event.preventDefault();
 		const section = document.getElementById(sectionId);
 		if (section) {
