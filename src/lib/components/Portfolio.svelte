@@ -7,7 +7,7 @@
 <article id="portfolio" class="wrapper style2">
 	<div class="containerrow">
 		<header>
-			<div class="boxstyle3">
+			<div class="boxstyle5">
 				<img src="{base}/images/portfolio.png" style="height: 75px; width: auto; margin-bottom: 5em;" alt="" />
 			</div>
 		</header>

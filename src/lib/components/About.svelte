@@ -7,7 +7,7 @@
 	  <div class="container">
 		  <div class="container">
 			  <header>
-				  <div class="boxstyle3">
+				  <div class="boxstyle5">
 					  <img src="{base}/images/hello.png" style="height: 75px; width: auto;" alt="Hello" />
 				  </div>
 			  </header>

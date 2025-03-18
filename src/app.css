@@ -246,7 +246,7 @@ p, ul, ol, dl, table {
 	border-radius: 8px;
 }
 
-.boxstyle3 img, 
+.boxstyle5 img, 
 header img {
     max-width: 100%;
     height: auto;
@@ -538,7 +538,7 @@ ul.social li a:hover {
         height: auto !important;
     }
     
-    .boxstyle3 img {
+    .boxstyle5 img {
         height: auto !important;
         max-height: 60px;
         width: auto;
