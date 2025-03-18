@@ -2,6 +2,7 @@
 	import { getProjectById } from '$lib/data/projects.js';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 	
 	$: slug = $page.params.slug;
 	$: project = getProjectById(slug);
@@ -27,56 +28,56 @@
 	// Project carousel images
 	const projectCarouselImages: Record<string, string[]> = {
 		'iskedyul': [
-			'/images/projects/iskedyul/carousel-1.png',
-			'/images/projects/iskedyul/carousel-2.png',
-			'/images/projects/iskedyul/carousel-3.png'
+			`${base}/images/projects/iskedyul/carousel-1.png`,
+			`${base}/images/projects/iskedyul/carousel-2.png`,
+			`${base}/images/projects/iskedyul/carousel-3.png`
 		],
 		'bridging-the-gap': [
-			'/images/projects/gap/carousel-1.png',
-			'/images/projects/gap/carousel-2.png',
-			'/images/projects/gap/carousel-3.png'
+			`${base}/images/projects/gap/carousel-1.png`,
+			`${base}/images/projects/gap/carousel-2.png`,
+			`${base}/images/projects/gap/carousel-3.png`
 		],
 		'assembler': [
-			'/images/projects/assembler/carousel-1.png',
-			'/images/projects/assembler/carousel-2.png'
+			`${base}/images/projects/assembler/carousel-1.png`,
+			`${base}/images/projects/assembler/carousel-2.png`
 		],
 		'laging-handa': [
-			'/images/projects/handa/carousel-1.png',
-			'/images/projects/handa/carousel-2.png'
+			`${base}/images/projects/handa/carousel-1.png`,
+			`${base}/images/projects/handa/carousel-2.png`
 		],
 		'butuwhere': [
-			'/images/projects/butuwhere/carousel-1.png',
-			'/images/projects/butuwhere/carousel-2.png',
-			'/images/projects/butuwhere/carousel-3.png'
+			`${base}/images/projects/butuwhere/carousel-1.png`,
+			`${base}/images/projects/butuwhere/carousel-2.png`,
+			`${base}/images/projects/butuwhere/carousel-3.png`
 		],
 		'guess-that-baby': [
-			'/images/projects/baby/carousel-2.png',
-			'/images/projects/baby/carousel-3.png',
-			'/images/projects/baby/carousel-4.png',
-			'/images/projects/baby/carousel-5.png'
+			`${base}/images/projects/baby/carousel-2.png`,
+			`${base}/images/projects/baby/carousel-3.png`,
+			`${base}/images/projects/baby/carousel-4.png`,
+			`${base}/images/projects/baby/carousel-5.png`
 		]
 	};
 
 	const techIcons: Record<string, string> = {
-		'C': '/images/tech/c.png',
-		'CSS': '/images/tech/css.png',
-		'Figma': '/images/tech/figma.png',
-		'FXML': '/images/tech/fxml.png',
-		'HTML': '/images/tech/html.png',
-		'Java': '/images/tech/java.png',
-		'Javascript': '/images/tech/javascript.png',
-		'Jupyter': '/images/tech/jupyter.png',
-		'Matplotlib': '/images/tech/matplotlib.png',
-		'Numpy': '/images/tech/numpy.png',
-		'Pandas': '/images/tech/pandas.png',
-		'Postgresql': '/images/tech/postgresql.png',
-		'Seaborn': '/images/tech/seaborn.png',
-		'Svelte': '/images/tech/svelte.png',
-		'Typescript': '/images/tech/typescript.png',
+		'C': `${base}/images/tech/c.png`,
+		'CSS': `${base}/images/tech/css.png`,
+		'Figma': `${base}/images/tech/figma.png`,
+		'FXML': `${base}/images/tech/fxml.png`,
+		'HTML': `${base}/images/tech/html.png`,
+		'Java': `${base}/images/tech/java.png`,
+		'Javascript': `${base}/images/tech/javascript.png`,
+		'Jupyter': `${base}/images/tech/jupyter.png`,
+		'Matplotlib': `${base}/images/tech/matplotlib.png`,
+		'Numpy': `${base}/images/tech/numpy.png`,
+		'Pandas': `${base}/images/tech/pandas.png`,
+		'Postgresql': `${base}/images/tech/postgresql.png`,
+		'Seaborn': `${base}/images/tech/seaborn.png`,
+		'Svelte': `${base}/images/tech/svelte.png`,
+		'Typescript': `${base}/images/tech/typescript.png`,
 	};
 
 	function getTechIcon(tech: string): string {
-		return techIcons[tech] || '/images/tech/code.png';
+		return techIcons[tech] || `${base}/images/tech/code.png`;
 	}
 	
 	function getSkillsForProject(projectId: string): string[] {
@@ -214,7 +215,7 @@
 							{getActionForProject(project.id)?.text}
 						</a>
 					{/if}
-					<a href="/#portfolio" class="action-button secondary">
+					<a href="{base}/#portfolio" class="action-button secondary">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
 						Back to portfolio
 					</a>
@@ -230,7 +231,7 @@
 				</header>
 				
 				<div class="project-nav">
-					<a href="/#portfolio" class="action-button secondary">← Back to portfolio</a>
+					<a href="{base}/#portfolio" class="action-button secondary">← Back to portfolio</a>
 				</div>
 			</div>
 		</article>
