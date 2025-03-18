@@ -12,14 +12,6 @@
 </script>
 
 <article id="home" class="wrapper style1">
-
-  <div style="padding: 20px; background-color: rgba(255,255,255,0.1); margin: 20px 0;">
-    <p>Testing image paths:</p>
-    <img src="https://ekochamber.github.io/portfolio/images/test.png" alt="Test direct URL" style="max-width: 100px; margin: 10px;" />
-    <img src="{base}/images/test.png" alt="Test with base path" style="max-width: 100px; margin: 10px;" />
-    <p>Base path value: {base}</p>
-  </div>
-
   <div class="container center-content">
     <div class="content-wrapper">
       <div class="row">

@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import { base } from '$app/paths';
-	
+
 	export let title = '';
 	export let description = '';
 	export let imageClass = '';
@@ -10,14 +10,8 @@
 	
 	const baseName = imageClass.replace('-cover', '');
 	
-	// Debug
-
-	const defaultImage = `https://ekochamber.github.io/portfolio/images/${baseName}-cover.png`;
-	const hoverImage = `https://ekochamber.github.io/portfolio/images/${baseName}.png`;
-
-	console.log('Base path:', base);
-	console.log('Default image path:', defaultImage);
-	console.log('Hover image path:', hoverImage);
+	const defaultImage = `${base}/images/${baseName}-cover.png`;
+	const hoverImage = `${base}/images/${baseName}.png`;
 </script>
 
 <article class="style2">
