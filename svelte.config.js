@@ -12,8 +12,7 @@ const config = {
       precompress: false
     }),
     paths: {
-      base: dev ? '' : '/portfolio',
-      assets: dev ? '' : '/portfolio'
+      base: dev ? '' : '/portfolio'
     }
   }
 };
